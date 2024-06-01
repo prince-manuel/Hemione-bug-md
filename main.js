@@ -21,10 +21,10 @@ const store = makeInMemoryStore({
     })
 })
 
-let phoneNumber = "916909137213"
+let phoneNumber = "2349017935543"
 let owner = JSON.parse(fs.readFileSync('./database/owner.json'))
 
-const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
+const pairingCode = !!phoneNumber || process.argv.includes("2349017935543")
 const useMobile = process.argv.includes("--mobile")
 
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
@@ -153,7 +153,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
         return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
     }
     
-    AstaBotInc.public = true
+    AstaBotInc.public = false
 
     AstaBotInc.serializeM = (m) => smsg(AstaBotInc, m, store)
 
